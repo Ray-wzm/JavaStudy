@@ -5,8 +5,6 @@
 
 package java_for;
 
-import java.util.Scanner;
-
 public class work03 {
     public static void main(String args[]) {
 //        6.输出1-100之间的不能被5整除的数，每5个一行
