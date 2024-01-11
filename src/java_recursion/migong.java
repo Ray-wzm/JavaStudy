@@ -23,6 +23,7 @@ public class migong {
         //5. 随便再单独配几个障碍物
         map[3][1] = 1;
         map[3][2] = 1;
+        map[1][2] = 1;
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[i].length; j++) {
                 System.out.printf(map[i][j] + " ");
@@ -30,8 +31,8 @@ public class migong {
             System.out.println();
         }
         System.out.println("找路后");
-        M m1=new M();
-        m1.findWay(map,1,1);
+        M m1 = new M();
+        m1.findWay(map, 1, 1);
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[i].length; j++) {
                 System.out.printf(map[i][j] + " ");
