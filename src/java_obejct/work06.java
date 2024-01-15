@@ -8,9 +8,13 @@ package java_obejct;
 public class work06 {
     public static void main(String args[]) {
         Cale cale1 = new Cale(1,5,'+');
+        System.out.println(cale1.calculate(cale1.a,cale1.b,cale1.action));
         Cale cale2 = new Cale(1,5,'*');
+        System.out.println(cale2.calculate(cale2.a,cale2.b,cale2.action));
         Cale cale3 = new Cale(1,0,'/');
+        System.out.println(cale3.calculate(cale3.a,cale3.b,cale3.action));
         Cale cale4 = new Cale(6,2,'/');
+        System.out.println(cale1.calculate(cale4.a,cale4.b,cale4.action));
     }
 }
 

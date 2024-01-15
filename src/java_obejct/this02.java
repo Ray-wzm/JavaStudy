@@ -7,12 +7,11 @@ package java_obejct;
 
 public class this02 {
     public static void main(String args[]) {
-        Person02 p1=new Person02("林克",100);
-        Person02 p2=new Person02("林",100);
-        if(p1.compareTo(p2)){
+        Person02 p1 = new Person02("林克", 100);
+        Person02 p2 = new Person02("林", 100);
+        if (p1.compareTo(p2)) {
             System.out.println("一样");
-        }
-        else System.out.println("不一样");
+        } else System.out.println("不一样");
     }
 }
 
