@@ -10,18 +10,32 @@ public class work01 {
     public static void main(String args[]) {
         A01 a = new A01();
         double[] arr = {5.5, 8.7, 8.6, 3, 3};
-        System.out.println("最大值是：" + a.max(arr));
+        double[] arr1 = {};
+        Double res = a.max(arr1);
+        if (res != null) {
+            System.out.println("最大值是：" + res);
+        } else {
+            System.out.println("请输入至少一个数！");
+        }
     }
 }
 
+//代码写完，实现业务后，要考虑代码健壮性！
 class A01 {
-    public double max(double[] arr) {
-        double temp = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-            if (temp < arr[i]) {
-                temp = arr[i];
+    public Double max(double[] arr) {
+        //数组不能为null或者长度为0
+        if (arr != null && arr.length > 0) {
+            double temp = arr[0];
+            for (int i = 0; i < arr.length; i++) {
+                if (temp < arr[i]) {
+                    temp = arr[i];
+                }
             }
+            return temp;
+        } else {
+            return null;
         }
-        return temp;
+
+
     }
 }

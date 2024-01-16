@@ -22,15 +22,6 @@ class Employee {
     int level;
     int money;
 
-    //(名字，性别，年龄，职位，薪水)
-    public Employee(String name, char sex, int age, int level, int money) {
-        this.name = name;
-        this.sex = sex;
-        this.age = age;
-        this.level = level;
-        this.money = money;
-    }
-
     //(名字，性别，年龄)
     public Employee(String name, char sex, int age) {
         this.name = name;
@@ -43,5 +34,14 @@ class Employee {
         this.level = level;
         this.money = money;
     }
+
+    //(名字，性别，年龄，职位，薪水)
+    public Employee(String name, char sex, int age, int level, int money) {
+        this(name,sex,age);//构造器的复用，一次只能用一个，且必须放在第一行
+        this.level = level;
+        this.money = money;
+    }
+
+
 
 }

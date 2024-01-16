@@ -12,11 +12,11 @@ public class work04 {
         for(int j=0;j<Arr.length;j++){
             System.out.print(Arr[j]+" ");
         }
+        System.out.println();
         A03  a = new A03();
-        a.copyArr(Arr);
         System.out.println("新数组是：");
         for(int i=0;i<a.copyArr(Arr).length;i++){
-            System.out.print(Arr[i]+" ");
+            System.out.print(a.copyArr(Arr)[i]+" ");
         }
     }
 }
@@ -24,12 +24,13 @@ public class work04 {
 //4.编写类A03,实现数组的复制功能copyArr，输入旧数组，返回一个新数组，元素和旧数组一样
 
 class A03{
-    int[] Arr;
-    public int[] copyArr(int[] array){
-        for(int i=0;i<array.length;i++){
-            array[i]=this.Arr[i];
+    public int[] copyArr(int[] oldArr){
+        //在堆中创建一个大小长度和原数组一致的对象空间；
+        int[] newArr = new int[oldArr.length];
+        for(int i=0;i<oldArr.length;i++){
+            newArr[i]=oldArr[i];
         }
-        return  array;
+        return  newArr;
     }
 }
 

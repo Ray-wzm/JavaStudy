@@ -14,17 +14,20 @@ public class work05 {
     }
 }
 
-class Circle{
+class Circle {
     int radius;
-    public Circle(int radius){
-        this.radius=radius;
+
+    public Circle(int radius) {
+        this.radius = radius;
     }
-    public double perimeter(int r){
+
+    public double perimeter(int r) {
         System.out.print("周长是：");
-        return 2*3.14*r;
+        return 2 * Math.PI * r;
     }
-    public double area(int r){
+
+    public double area(int r) {
         System.out.print("面积是：");
-        return 3.14*r*r;
+        return Math.PI * r * r;
     }
 }

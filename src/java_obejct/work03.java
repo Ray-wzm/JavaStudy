@@ -8,7 +8,9 @@ package java_obejct;
 public class work03 {
     public static void main(String args[]) {
         Book book1 = new Book("哈利波特", 180);
-        System.out.println(book1.name + ",价格是：" + book1.price);
+        book1.showInfo();
+        book1.updatePrice();
+        book1.showInfo();
     }
 }
 
@@ -22,18 +24,21 @@ class Book {
     public Book(String name, double price) {
         this.name = name;
         this.price = price;
-        if (this.price > 100) {
-            updatePrice(this.price);
-        }
     }
 
     //创建更改价格的方法
-    public void updatePrice(double price) {
+    public void updatePrice() {
+        //如果方法中没有局部变量，那么this.XXX 等价于 XXX
         if (this.price > 150) {
             this.price = 150;
         } else if (this.price > 100) {
             this.price = 100;
         }
+    }
+
+    //显示书籍信息
+    public void showInfo() {
+        System.out.println(this.name + ",价格是：" + this.price);
     }
 
 }

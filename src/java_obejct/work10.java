@@ -27,7 +27,7 @@ class CircleNew {
 
     //findArea方法，返回圆的面积
     public double findArea(CircleNew c) {
-        return 3.1415926 * (this.radius) * (this.radius);
+        return Math.PI * (this.radius) * (this.radius);
     }
 
 }
@@ -36,7 +36,7 @@ class PassObject {
     public void printAreas(CircleNew c, int times) {
         for (int i = 1; i <= times; i++) {
             c.radius = i;
-            System.out.println("当半径是：" + i + "时, 面积是：" + c.findArea(c));
+            System.out.println("当半径是：" + (double) i + "时, 面积是：" + c.findArea(c));
         }
     }
 }
