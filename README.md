@@ -15,3 +15,13 @@ git config --global --unset http.proxy
 2. 切换SSH命令
 3. SSH官方优化
    https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port
+
+**常用快捷键**
+1. Ctrl+B 快速定位类
+2. Ctrl+D 快速删除光标所在行
+3. Ctrl+Alt+下 快速复制光标所在行
+4. Ctrl+\ 快速注释
+5. alt+insert 生成构造器
+6. ctrl+H 查看类的层级关系
+7. alt + \ 快速补全代码
+
