@@ -17,11 +17,11 @@ git config --global --unset http.proxy
    https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port
 
 **常用快捷键**
-Ctrl+B 快速定位类
-Ctrl+D 快速删除光标所在行
-Ctrl+Alt+下 快速复制光标所在行
-Ctrl+\ 快速注释
-alt+insert 生成构造器
-ctrl+H 查看类的层级关系
-alt + \ 快速补全代码
+> Ctrl+B 快速定位类
+> Ctrl+D 快速删除光标所在行
+> Ctrl+Alt+下 快速复制光标所在行
+> Ctrl+\ 快速注释
+> alt+insert 生成构造器
+> ctrl+H 查看类的层级关系
+> alt + \ 快速补全代码
 
