@@ -3,7 +3,7 @@
  * @date: 2024/1/17
  */
 
-package java_intermediate.java_package.package01.com.xiaoqiang;
+package java_intermediate.com.xiaoming;
 
 public class Dog {
     public static void main(String args[]) {
