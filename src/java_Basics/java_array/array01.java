@@ -5,6 +5,7 @@
 
 package java_Basics.java_array;
 
+
 import java.util.Scanner;
 
 public class array01 {

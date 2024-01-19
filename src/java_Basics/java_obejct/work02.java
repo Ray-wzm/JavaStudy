@@ -17,6 +17,7 @@ public class work02 {
                 System.out.println("找到了，下标是：" + test);
             }
         } else {
+            
             System.out.println("输入错误！");
         }
 
@@ -28,6 +29,7 @@ public class work02 {
 //类方法里面的数据类型大写，就是包装，相当于变成了引用类型，回参可以返回对应的数据类型和空值null ?
 
 class A02 {
+
     public Integer find(String message, String[] arr) {
         int index = -1;
         if (arr != null && arr.length > 0) {

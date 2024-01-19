@@ -5,6 +5,7 @@
 
 package java_intermediate.com.use;
 
+import java_intermediate.com.modifier.A;
 import java_intermediate.com.xiaoqiang.Dog;
 
 public class test {
@@ -15,5 +16,7 @@ public class test {
         System.out.println(dog);
         java_intermediate.com.xiaoming.Dog dog1 = new java_intermediate.com.xiaoming.Dog();
         System.out.println(dog1);
+        A a = new A();
+        System.out.println(a.n1);
     }
 }
