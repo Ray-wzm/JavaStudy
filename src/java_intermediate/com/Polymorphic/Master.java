@@ -20,6 +20,11 @@ public class Master {
         this.name = name;
     }
 
+    /**
+     * 利用方法的重载和重写实现多态
+     * @param dog
+     * @param bone
+     */
     //主人给小狗喂食骨头
     public void feed(Dog dog, Bone bone) {
         System.out.println("主人 " + name + "给小狗 " + dog.getName() + "吃 " + bone.getName());
@@ -30,5 +35,10 @@ public class Master {
         System.out.println("主人 " + name + "给小猫 " + cat.getName() + "吃 " + fish.getName());
     }
     //如果不用多态，动物和食物都很多，就会造成feed函数很多，代码很冗余，不利于维护
+
+    public void feed(Animal animal,Food food){
+        System.out.println("主人 " + name + "给 " + animal.getName() + "吃 " + food.getName());
+    }
+
 
 }
