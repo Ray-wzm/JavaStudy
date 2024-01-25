@@ -14,6 +14,10 @@ public class B extends A{
     }
 
     public int sum(){
+        return getI()+10;
+    }
+
+    public int sum1(){
         return i+10;
     }
 }
