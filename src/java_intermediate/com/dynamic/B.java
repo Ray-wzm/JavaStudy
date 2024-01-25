@@ -10,12 +10,12 @@ public class B extends A{
 
     @Override
     public int getI() {
-        return i;
+        return i +10;
     }
 
-    public int sum(){
-        return getI()+10;
-    }
+//    public int sum(){
+//        return getI()+10;
+//    }
 
     public int sum1(){
         return i+10;
