@@ -20,7 +20,7 @@ public class Homework01 {
         Person temp;
         int index = -1;
         for (int i = 0; i < persons.length; i++) {
-            for (int j = 0; j < persons.length - 1; j++) {
+            for (int j = 0; j < persons.length - 1 - i; j++) {
                 if (persons[j].getAge() < persons[j + 1].getAge()) {
                     temp = persons[j + 1];
                     persons[j + 1] = persons[j];
@@ -39,9 +39,10 @@ public class Homework01 {
     }
 }
 
-/**  写出四种访问修饰符和各自的访问权限
- *
- *              本类     同包   子类   不同包
+/**
+ * 写出四种访问修饰符和各自的访问权限
+ * <p>
+ * 本类     同包   子类   不同包
  * private       T      F      F     F
  * public        T      T      T     T
  * protected     T      T      T     F
