@@ -90,7 +90,7 @@ System.out.println("收益入账\t+" + money + "\t" + sdf.format(date) + "\t\t" 
 >
 >（4）日期，引入 java.util.Date,并格式化
 >
-4.退出确认
+5.退出确认
 >(1)用户输入 4 退出时，给出提示判断是否真的要退出？，必须正确输入y/n，否则一直循环
 >
 ```$java
@@ -115,3 +115,9 @@ System.out.println("收益入账\t+" + money + "\t" + sdf.format(date) + "\t\t" 
 >（2）收益和入账时，判断金额是否合理，并给出提示
 >
 >（3）将以上面向过程代码改成面向对象
+>
+> 新建一个smallChangeSysOOP.java的类，专门实现各种功能
+> 新建一个smallChangeSysApp.java的类，专门调用各种方法
+>
+**附加练习**
+1.通过java.Swing将其改写成可视化界面
