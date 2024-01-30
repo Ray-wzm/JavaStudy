@@ -17,17 +17,34 @@ public class HouseView {
     //显示主菜单
     private boolean loop = true;//控制显示菜单
     private char key = ' ';//定义用户选择动作
-    private char choose=' ';//定义用户选择
+    private int choose = -2;//定义用户选择
+    private char key2 = ' ';//定义用户选择动作
+    private boolean lope1 = true;
     private HouseService houseService = new HouseService(10);//假定数组的大小为10
     Scanner scanner = new Scanner(System.in);
 
     //delHouse()调用del方法，按ID删除房屋
-    public void delHouse(){
+    public void delHouse() {
         System.out.println("======================删除房屋=====================");
-        do{
-            System.out.println("请输入要删除的房屋编号（-1退出）：");
-            System.out.println("确定是否删除（y/n）请小心选择:");
-        }while (choose)
+
+        System.out.println("请输入要删除的房屋编号（-1退出）：");
+        int choose = Utility.readInt();
+        if (choose == -1) {
+            System.out.println("你放弃了删除");
+            return;
+        }
+
+        char choice = Utility.readConfirmSelection();
+        if (choice == 'Y') {
+            if (houseService.del(choose)) {
+                System.out.println("=====================删除房屋成功====================");
+            } else {
+                System.out.println("=====================删除房屋失败====================");
+            }
+
+        } else {
+            System.out.println("=====================放弃删除房屋====================");
+        }
 
     }
 
@@ -46,9 +63,9 @@ public class HouseView {
         String states = Utility.readString(3);
         //创建一个新的House对象;ID 是系统产生的，用户不用输入
         House newHouse = new House(0, name, phone, address, rent, states);
-        if(houseService.add(newHouse)){
+        if (houseService.add(newHouse)) {
             System.out.println("=====================添加房屋成功====================");
-        }else{
+        } else {
             System.out.println("=====================添加房屋失败====================");
         }
     }
@@ -56,7 +73,7 @@ public class HouseView {
     //编写listHouses()显示房屋列表
     public void listHouses() {
         System.out.println("======================房屋列表=====================");
-        System.out.println("编号\t房主\t电话\t地址\t月租\t状态（已出租/未出租）");
+        System.out.println("编号\t\t房主\t\t电话\t\t地址\t\t月租\t\t状态（已出租/未出租）");
         House[] houses = houseService.list();//得到所有房屋信息
         for (int i = 0; i < houses.length; i++) {
             if (houses[i] == null) {
@@ -86,7 +103,7 @@ public class HouseView {
                     System.out.println("======================查找房屋=====================");
                     break;
                 case '3':
-                    System.out.println("删 除 房 屋");
+                    delHouse();
                     break;
                 case '4':
                     System.out.println("修 改 房 屋 信 息");

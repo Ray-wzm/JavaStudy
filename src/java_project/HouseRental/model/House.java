@@ -76,7 +76,7 @@ public class House {
                 "\t\t" + name +
                 "\t" + phone +
                 "\t\t" + address +
-                "\t\t" + rent +
-                "\t\t" + state;
+                "\t" + rent +
+                "\t" + state;
     }
 }
