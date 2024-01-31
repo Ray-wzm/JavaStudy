@@ -144,6 +144,10 @@ public class Utility {
         return c;
     }
 
+
+
+
+
     /**
      * 功能： 读取一个字符串
      * @param limit 读取的长度

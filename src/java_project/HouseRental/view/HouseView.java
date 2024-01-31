@@ -17,11 +17,86 @@ public class HouseView {
     //显示主菜单
     private boolean loop = true;//控制显示菜单
     private char key = ' ';//定义用户选择动作
-    private int choose = -2;//定义用户选择
-    private char key2 = ' ';//定义用户选择动作
-    private boolean lope1 = true;
     private HouseService houseService = new HouseService(10);//假定数组的大小为10
     Scanner scanner = new Scanner(System.in);
+
+    //updateHouse():根据ID用searchHouse找到房屋信息，显示原始数据，并支持修改，如果不想修改，可以直接回车
+    public void updateHouse() {
+        System.out.println("=====================修改房屋信息===================");
+        System.out.println("请输入要修改的房屋编号（-1退出）：");
+        int choose = Utility.readInt();
+        if (choose == -1) {
+            System.out.println("你放弃了修改");
+            return;
+        }
+        House house = houseService.search(choose);
+        if (house == null) {
+            System.out.println("====================没有查到数据===================");
+            return;
+        }
+        System.out.print("姓名（" + house.getName() + "）:");
+        String name = Utility.readString(8, "");//如果不修改，直接回车，默认空串""
+        if (!"".equals(name)) {
+            house.setName(name);
+        }
+
+        System.out.print("电话（" + house.getPhone() + "）：");
+        String phone = Utility.readString(12, "");
+        if (!"".equals(phone)) {
+            house.setPhone(phone);
+        }
+
+        System.out.print("地址（" + house.getAddress() + "）：");
+        String address = Utility.readString(16, "");
+        if (!"".equals(address)) {
+            house.setAddress(address);
+        }
+
+        System.out.print("租金（" + house.getRent() + "）：");
+        int rent = Utility.readInt(-1);
+        if (rent != -1) {
+            house.setRent(rent);
+        }
+
+        System.out.print("出租状态（" + house.getState() + "）：");
+        String states = Utility.readString(3, "");
+        if (!"".equals(states)) {
+            house.setState(states);
+        }
+
+    }
+
+    //searchHouse():根据ID查找房屋信息，调用search方法
+    public void searchHouse() {
+        System.out.println("======================查找房屋=====================");
+        System.out.println("请输入要查询的房屋编号（-1退出）：");
+        int choose = Utility.readInt();
+        House house = houseService.search(choose);
+        if (choose == -1) {
+            System.out.println("你放弃了查询");
+            return;
+        } else if (house != null) {
+            System.out.println("======================查询成功=====================");
+            System.out.println(houseService.search(choose));
+
+        } else {
+            System.out.println("====================没有查到数据===================");
+            return;
+        }
+
+    }
+
+    //quit()
+    public void quitHouse() {
+        System.out.println("你确定要退出吗？");
+        char choice = Utility.readConfirmSelection();
+        if (choice == 'Y') {
+            System.out.println("=====================退出出租系统====================");
+            loop = false;
+        } else {
+            System.out.println("=====================取消退出操作====================");
+        }
+    }
 
     //delHouse()调用del方法，按ID删除房屋
     public void delHouse() {
@@ -100,20 +175,20 @@ public class HouseView {
                     addHouse();
                     break;
                 case '2':
-                    System.out.println("======================查找房屋=====================");
+                    searchHouse();
                     break;
                 case '3':
                     delHouse();
                     break;
                 case '4':
-                    System.out.println("修 改 房 屋 信 息");
+                    updateHouse();
                     break;
                 case '5':
                     listHouses();
                     break;
                 case '6':
-                    System.out.println("退出");
-                    return;
+                    quitHouse();
+                    break;
                 default:
                     System.out.println("选择有误，请重新选择！");
             }

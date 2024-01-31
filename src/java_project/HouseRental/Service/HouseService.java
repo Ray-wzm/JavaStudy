@@ -59,4 +59,14 @@ public class HouseService {
         houses[--HouseNums] = null;//将当前数组的最后一个置空
         return true;
     }
+
+    //search方法
+    public House search(int choiceId){
+        for(int i=0;i<HouseNums;i++){
+            if(choiceId==houses[i].getId()){
+                return houses[i];
+            }
+        }
+        return null;
+    }
 }
