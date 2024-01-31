@@ -7,14 +7,10 @@ package java_project.HouseRental.Service;
 
 import java_project.HouseRental.model.House;
 
-import java.util.Scanner;
-
 public class HouseService {
     private House[] houses;//用来存放House对象
     private int HouseNums = 1;//记录当前有多少房屋信息
     private int idCounter = 1;//记录当前的ID增长到哪个值
-    private int choiceId;//用户选择的Id
-    Scanner scanner = new Scanner(System.in);
 
     public HouseService(int size) {
         houses = new House[size];//当创建HouseService对象时，指定数组大小
