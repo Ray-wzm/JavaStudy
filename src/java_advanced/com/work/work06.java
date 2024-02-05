@@ -10,6 +10,8 @@ public class work06 {
         Person zelda = new Person("Zelda", new Horse());
         zelda.ChooseVehicles("river");
         zelda.ChooseVehicles("road");
+        zelda.ChooseVehicles("road");
+        zelda.ChooseVehicles("Mountain");
 
     }
 }
@@ -40,13 +42,30 @@ class Boat implements Vehicles {
     }
 }
 
+class Airport implements Vehicles {
+    @Override
+    public void work() {
+        System.out.println("飞翔，飞机飞过山头...");
+    }
+}
+
 class Factory {
+    //马始终是同一匹；
+    private static Horse horse = new Horse();//饿汉式
+
+    private Factory() {
+    }
+
     public static Horse getHorseInstense() {
-        return new Horse();
+        return horse;
     }
 
     public static Boat getBoatInstense() {
         return new Boat();
+    }
+
+    public static Airport getAirportInstense() {
+        return new Airport();
     }
 }
 
@@ -73,13 +92,23 @@ class Person {
         Vehicles.work();
     }
 
+    public void Mountain() {
+        if (!(Vehicles instanceof Airport)) {
+            Vehicles = Factory.getAirportInstense();
+        }
+        Vehicles.work();
+    }
+
     public void ChooseVehicles(String meet) {
         if (meet.equals("river")) {
             System.out.print(name);
             PassRiver();
+        } else if (meet.equals("Mountain")) {
+            System.out.print(name);
+            Mountain();
         } else {
             System.out.print(name);
-            this.Common();
+            Common();
         }
     }
 }
