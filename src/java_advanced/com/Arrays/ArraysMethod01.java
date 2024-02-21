@@ -24,7 +24,7 @@ public class ArraysMethod01 {
             public int compare(Object o1, Object o2) {
                 Integer i1 = (Integer)o1;
                 Integer i2 =(Integer)o2;
-                return i1-i2;
+                return i2-i1;
             }
         });
         System.out.println(Arrays.toString(integer));
