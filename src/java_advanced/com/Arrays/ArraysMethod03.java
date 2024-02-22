@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class ArraysMethod03 {
+    @SuppressWarnings("all")
     public static void main(String args[]) {
         Book[] books = new Book[4];
         books[0] = new Book("红楼梦", 100);
