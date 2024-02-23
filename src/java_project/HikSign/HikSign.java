@@ -20,8 +20,8 @@ public class HikSign {
         headers.put("Accept", "*/*");
         headers.put("Content-Type", "application/json");
         headers.put("x-ca-key", appkey);
-        //headers.put("x-ca-nonce", UUID.randomUUID().toString());
-        //headers.put("x-ca-timestamp", String.valueOf((new Date()).getTime()));
+        headers.put("x-ca-nonce", UUID.randomUUID().toString());
+        headers.put("x-ca-timestamp", String.valueOf((new Date()).getTime()));
 
         String signStr = sign(secret, method, path, headers);
         headers.put("x-ca-signature-headers", "x-ca-key,x-ca-nonce,x-ca-timestamp");
