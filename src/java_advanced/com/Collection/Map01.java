@@ -7,6 +7,8 @@ package java_advanced.com.Collection;
 
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 @SuppressWarnings("all")
 public class Map01 {
@@ -17,9 +19,18 @@ public class Map01 {
         //常用String当作Map的Key
         //key和value之间存在单向一对一关系，即通过指定的key总能找到对应的value
         HashMap hashMap = new HashMap();
-        hashMap.put("no1","zelda");
-        hashMap.put("no2","link");
+        hashMap.put("no1", "zelda");
+        hashMap.put("no2", "link");
+        hashMap.put("no3", "gainong");
         System.out.println(hashMap);
         System.out.println(hashMap.get("no1"));
+        //for-each：就是增强for
+        //使用 for-each 遍历
+        Set entrySet = hashMap.entrySet();
+        for (Object entry : entrySet) {
+            Map.Entry m = (Map.Entry) entry;
+            System.out.println(m.getKey() + "-" + m.getValue());
+        }
+        System.out.println();
     }
 }
