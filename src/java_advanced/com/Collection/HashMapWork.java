@@ -20,6 +20,7 @@ public class HashMapWork {
         hashMap.put(employees02.getId(),employees02);
         hashMap.put(employees03.getId(),employees03);
         //方式1：使用entrySet
+        System.out.println("====entrySet====");
         Set set = hashMap.entrySet();
         for (Object obj:set){
             Map.Entry entry = (Map.Entry) obj;
@@ -30,9 +31,10 @@ public class HashMapWork {
 
         }
         //方式2：取Key
+        System.out.println("====keySet====");
         Set key = hashMap.keySet();
         for (Object obj:key){
-            Employees employees=(Employees)hashMap.get(key);
+            Employees employees=(Employees)hashMap.get(obj);
             if (employees.getSalary()>=1000){
                 System.out.println(employees);
             }
