@@ -18,7 +18,7 @@ public class TreeSet01 {
         TreeSet treeSet = new TreeSet(new Comparator() {
             @Override
             public int compare(Object o1, Object o2) {
-                return ((String) o1).compareTo((String) o2);
+                return ((String) o1).length() - ((String) o2).length();
             }
         });
         treeSet.add("jack");
@@ -36,17 +36,17 @@ public class TreeSet01 {
          *
          * 在调用 treeSet.add("tom")，在底层会执行
          * if (cpr != null) { //cpr就是匿名内部类
- *             do {
- *                 parent = t;
- *                 cmp = cpr.compare(key, t.key);//动态绑定
- *                 if (cmp < 0)
- *                     t = t.left;
- *                 else if (cmp > 0)
- *                     t = t.right;
- *                 else //如果相等，就返回0,加入不进去
- *                     return t.setValue(value);
- *             } while (t != null);
- *         }
+         *             do {
+         *                 parent = t;
+         *                 cmp = cpr.compare(key, t.key);//动态绑定
+         *                 if (cmp < 0)
+         *                     t = t.left;
+         *                 else if (cmp > 0)
+         *                     t = t.right;
+         *                 else //如果相等，就返回0,加入不进去
+         *                     return t.setValue(value);
+         *             } while (t != null);
+         *         }
          */
     }
 }
