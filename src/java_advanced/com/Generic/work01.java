@@ -24,15 +24,7 @@ public class work01 {
                 if (i != 0) {
                     return i;
                 }
-                int year = o1.getBirthday().getYear() - o2.getBirthday().getYear();
-                if (year != 0) {
-                    return year;
-                }
-                int month = o1.getBirthday().getMonth() - o2.getBirthday().getMonth();
-                if (month != 0) {
-                    return month;
-                }
-                return o1.getBirthday().getDay() - o2.getBirthday().getDay();
+                return o1.getBirthday().compareTo(o2.getBirthday());
             }
         });
         for (Emp emp : list) {
@@ -86,7 +78,7 @@ class Emp {
     }
 }
 
-class Date {
+class Date implements Comparable<Date> {
     private int Year;
     private int Month;
     private int Day;
@@ -130,4 +122,16 @@ class Date {
                 ']';
     }
 
+    @Override
+    public int compareTo(Date o) {
+        int year = Year - o.getYear();
+        if (year != 0) {
+            return year;
+        }
+        int month = Month- o.getMonth();
+        if (month != 0) {
+            return month;
+        }
+        return Day - o.getDay();
+    }
 }
